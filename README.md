@@ -1,7 +1,7 @@
 # FLASHING-OF-LEDS-WITH-LPC-1768
 
 # AIM: 
-   To interface and toggle the led with ARM LPC 1768 microprocessor           
+To interface and toggle the led with ARM LPC 1768 microprocessor           
            
 # COMPONENTS REQUIRED:
 ##  HARDWARE:
@@ -43,19 +43,43 @@ Delay.h, stdutils.h, gpioi.h
 
 # PIN DIAGRAM :
  
+<img width="1037" height="665" alt="image" src="https://github.com/user-attachments/assets/575ce0a3-7f05-44ff-9692-4f0f901b11f6" />
 
 # CIRCUIT DIAGRAM:
- 
+
+<img width="883" height="457" alt="image" src="https://github.com/user-attachments/assets/0888da4c-5ea6-44a1-a192-98e771c86feb" />
  
 # PROGRAM:
+```
+#include <lpc17xx.h>
+#include "delay.h"      
+#include "gpio.h"
 
+#define LED P1_29        
 
- 
+/* start the main program */
+int main()
+{
+    SystemInit();                         
+    GPIO_PinFunction(LED,PINSEL_FUNC_0);   
+    GPIO_PinDirection(LED,OUTPUT);        
+    GPIO_PinWrite(LED,LOW);
+
+    while(1)
+    {
+        /* Turn On all the leds and wait for 100ms */
+        GPIO_PinWrite(LED,HIGH);           
+        DELAY_ms(100);
+
+        GPIO_PinWrite(LED,LOW);           
+        DELAY_ms(100);
+    }
+}
+```
+
 # Output:
 
+<img width="551" height="572" alt="image" src="https://github.com/user-attachments/assets/d9437309-b537-46f7-9755-a69f7950dfc3" />
 
-
-
-
-
-
+# Result:
+The experiment on toggling an LED with the ARM LPC1768 microcontroller was successfully performed. The LED flashed ON and OFF at regular intervals as programmed, confirming correct interfacing and functioning of the GPIO operations. The code compiled without errors, and all hardware connections were verified to work as expected. The experiment demonstrated the basic use of GPIO for output and timing control using software delays.
