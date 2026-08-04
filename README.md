@@ -9,8 +9,10 @@ To interface and toggle the led with ARM LPC 1768 microprocessor
 ##  HARDWARE:
 ARM LPC1768
 LED
+
 ## SOFTWARE:
 KEIL MICRO VISION 4.0 IDE
+
 
 # PROCEDURE:
 
@@ -37,6 +39,7 @@ Command: fromelf --bin projectname.axf --output filename.bin
 ⮚	Check the project folder for the generated .Bin file.
 
 # ADD FILES:
+
 Target1:
 Source group1:
 Startuplpc17xx.s, main.c (t), delay.c (t), systemlpc17xx.c (t), gpio.c (t)
@@ -44,10 +47,13 @@ Header:
 Delay.h, stdutils.h, gpioi.h
 
 # PIN DIAGRAM :
+
  
 <img width="1037" height="665" alt="image" src="https://github.com/user-attachments/assets/575ce0a3-7f05-44ff-9692-4f0f901b11f6" />
 
+
 # CIRCUIT DIAGRAM:
+
 
 <img width="883" height="457" alt="image" src="https://github.com/user-attachments/assets/0888da4c-5ea6-44a1-a192-98e771c86feb" />
  
@@ -80,6 +86,7 @@ int main()
 ```
 
 # Output:
+
 
 <img width="551" height="572" alt="image" src="https://github.com/user-attachments/assets/d9437309-b537-46f7-9755-a69f7950dfc3" />
 
